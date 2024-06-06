@@ -535,7 +535,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -651,7 +651,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -752,7 +752,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -823,7 +823,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -878,6 +878,32 @@
     <GUI>
       <xloc>112</xloc>
       <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
