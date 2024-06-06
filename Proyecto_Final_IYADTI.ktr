@@ -682,8 +682,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
-      <yloc>48</yloc>
+      <xloc>432</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -700,7 +700,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
+    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -816,7 +816,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
+    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -917,7 +917,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
+    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -988,7 +988,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
+    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -1043,6 +1043,50 @@
     <GUI>
       <xloc>192</xloc>
       <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>HTTP client</name>
+    <type>HTTP</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <url/>
+    <urlInField>N</urlInField>
+    <urlField/>
+    <encoding>UTF-8</encoding>
+    <httpLogin/>
+    <httpPassword>Encrypted </httpPassword>
+    <proxyHost/>
+    <proxyPort/>
+    <socketTimeout>10000</socketTimeout>
+    <connectionTimeout>10000</connectionTimeout>
+    <closeIdleConnectionsTime>-1</closeIdleConnectionsTime>
+    <lookup>
+    </lookup>
+    <result>
+      <name>result</name>
+      <code/>
+      <response_time/>
+      <response_header/>
+    </result>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
