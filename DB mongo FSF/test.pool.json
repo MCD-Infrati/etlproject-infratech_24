@@ -1,0 +1,104 @@
+[{
+  "_id": {
+    "$oid": "640d0a975f254a7fe2ff5233"
+  },
+  "PID": 528164060,
+  "Pool Area": 144,
+  "Pool QC": "Ex"
+},
+{
+  "_id": {
+    "$oid": "640d0a9b5f254a7fe2ff5576"
+  },
+  "PID": 908154235,
+  "Pool Area": 480,
+  "Pool QC": "Gd"
+},
+{
+  "_id": {
+    "$oid": "640d0a9c5f254a7fe2ff55ba"
+  },
+  "PID": 914475020,
+  "Pool Area": 576,
+  "Pool QC": "Gd"
+},
+{
+  "_id": {
+    "$oid": "640d0a9e5f254a7fe2ff57a8"
+  },
+  "PID": 528320050,
+  "Pool Area": 555,
+  "Pool QC": "Ex"
+},
+{
+  "_id": {
+    "$oid": "640d0aa05f254a7fe2ff58c0"
+  },
+  "PID": 535353050,
+  "Pool Area": 368,
+  "Pool QC": "TA"
+},
+{
+  "_id": {
+    "$oid": "640d0aa15f254a7fe2ff59b9"
+  },
+  "PID": 906200230,
+  "Pool Area": 444,
+  "Pool QC": "TA"
+},
+{
+  "_id": {
+    "$oid": "640d0aa35f254a7fe2ff5b72"
+  },
+  "PID": 909475230,
+  "Pool Area": 228,
+  "Pool QC": "Ex"
+},
+{
+  "_id": {
+    "$oid": "640d0aa35f254a7fe2ff5ba2"
+  },
+  "PID": 923202220,
+  "Pool Area": 561,
+  "Pool QC": "TA"
+},
+{
+  "_id": {
+    "$oid": "640d0aa55f254a7fe2ff5c4e"
+  },
+  "PID": 527356020,
+  "Pool Area": 519,
+  "Pool QC": "Fa"
+},
+{
+  "_id": {
+    "$oid": "640d0aa55f254a7fe2ff5c55"
+  },
+  "PID": 527377030,
+  "Pool Area": 648,
+  "Pool QC": "Fa"
+},
+{
+  "_id": {
+    "$oid": "640d0aa65f254a7fe2ff5d46"
+  },
+  "PID": 532476050,
+  "Pool Area": 800,
+  "Pool QC": "Gd"
+},
+{
+  "_id": {
+    "$oid": "640d0aa75f254a7fe2ff5df2"
+  },
+  "PID": 535150300,
+  "Pool Area": 512,
+  "Pool QC": "Ex"
+},
+{
+  "_id": {
+    "$oid": "640d0aa95f254a7fe2ff5f5f"
+  },
+  "PID": 905426150,
+  "Pool Area": 738,
+  "Pool QC": "Gd"
+}]
