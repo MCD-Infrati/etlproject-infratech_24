@@ -430,17 +430,12 @@
     <created_date>2024/06/05 21:43:46.712</created_date>
     <modified_user>-</modified_user>
     <modified_date>2024/06/05 21:43:46.712</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <order>
-    <hop>
-      <from>HTTP client</from>
-      <to>CSV file input</to>
-      <enabled>N</enabled>
-    </hop>
   </order>
   <step>
     <name>CSV file input</name>
@@ -478,13 +473,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>576</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>HTTP client</name>
+    <name>HTTP_fuente_AmesProperty.csv</name>
     <type>HTTP</type>
     <description/>
     <distribute>Y</distribute>
@@ -495,9 +490,9 @@
       <schema_name/>
     </partitioning>
     <url>https://raw.githubusercontent.com/MCD-Infrati/etlproject-infratech_24/main/sources/AmesProperty.csv</url>
-    <urlInField>N</urlInField>
+    <urlInField>Y</urlInField>
     <urlField/>
-    <encoding>UTF-8</encoding>
+    <encoding/>
     <httpLogin/>
     <httpPassword>Encrypted </httpPassword>
     <proxyHost/>
@@ -508,7 +503,7 @@
     <lookup>
     </lookup>
     <result>
-      <name>result</name>
+      <name>AmesProperty</name>
       <code/>
       <response_time/>
       <response_header/>
@@ -522,8 +517,367 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
+      <xloc>128</xloc>
       <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>MongoDB_test_bsmt</name>
+    <type>MongoDbInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <use_connection_string>Y</use_connection_string>
+    <use_legacy_options>N</use_legacy_options>
+    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <hostname>localhost</hostname>
+    <port>27017</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>test</db_name>
+    <fields_name/>
+    <collection>bsmt</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database/>
+    <auth_user>infrati</auth_user>
+    <auth_password>Encrypted 2be98afc86aa7f2e4cb10a076cc93bbd3</auth_password>
+    <auth_mech/>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>N</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <allow_disk_use>N</allow_disk_use>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>PID</field_name>
+        <field_path>$.PID</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Bsmt Unf SF</field_name>
+        <field_path>$.Bsmt Unf SF</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Bsmt Cond</field_name>
+        <field_path>$.Bsmt Cond</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Bsmt Half Bath</field_name>
+        <field_path>$.Bsmt Half Bath</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>BsmtFin Type 1</field_name>
+        <field_path>$.BsmtFin Type 1</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>BsmtFin Type 2</field_name>
+        <field_path>$.BsmtFin Type 2</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Total Bsmt SF</field_name>
+        <field_path>$.Total Bsmt SF</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Bsmt Exposure</field_name>
+        <field_path>$.Bsmt Exposure</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Bsmt Full Bath</field_name>
+        <field_path>$.Bsmt Full Bath</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Bsmt Qual</field_name>
+        <field_path>$.Bsmt Qual</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>BsmtFin SF 2</field_name>
+        <field_path>$.BsmtFin SF 2</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>BsmtFin SF 1</field_name>
+        <field_path>$.BsmtFin SF 1</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+    </mongo_fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>MongoDB_test_garage</name>
+    <type>MongoDbInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <use_connection_string>Y</use_connection_string>
+    <use_legacy_options>N</use_legacy_options>
+    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <hostname>localhost</hostname>
+    <port>27017</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>test</db_name>
+    <fields_name/>
+    <collection>garage</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database/>
+    <auth_user>infrati</auth_user>
+    <auth_password>Encrypted 2be98afc86aa7f2e4cb10a076cc93bbd3</auth_password>
+    <auth_mech/>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>N</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <allow_disk_use>N</allow_disk_use>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>PID</field_name>
+        <field_path>$.PID</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Garage Cond</field_name>
+        <field_path>$.Garage Cond</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Garage Type</field_name>
+        <field_path>$.Garage Type</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Order</field_name>
+        <field_path>$.Order</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Garage Yr Blt</field_name>
+        <field_path>$.Garage Yr Blt</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Garage Cars</field_name>
+        <field_path>$.Garage Cars</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Garage Qual</field_name>
+        <field_path>$.Garage Qual</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Garage Finish</field_name>
+        <field_path>$.Garage Finish</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Garage Area</field_name>
+        <field_path>$.Garage Area</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+    </mongo_fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>MongoDB_test_misc</name>
+    <type>MongoDbInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <use_connection_string>Y</use_connection_string>
+    <use_legacy_options>N</use_legacy_options>
+    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <hostname>localhost</hostname>
+    <port>27017</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>test</db_name>
+    <fields_name/>
+    <collection>misc</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database/>
+    <auth_user>infrati</auth_user>
+    <auth_password>Encrypted 2be98afc86aa7f2e4cb10a076cc93bbd3</auth_password>
+    <auth_mech/>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>N</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <allow_disk_use>N</allow_disk_use>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>PID</field_name>
+        <field_path>$.PID</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Misc Feature</field_name>
+        <field_path>$.Misc Feature</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Misc Val</field_name>
+        <field_path>$.Misc Val</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+    </mongo_fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>MongoDB_test_pool</name>
+    <type>MongoDbInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <use_connection_string>Y</use_connection_string>
+    <use_legacy_options>N</use_legacy_options>
+    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <hostname>localhost</hostname>
+    <port>27017</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>test</db_name>
+    <fields_name/>
+    <collection>pool</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database/>
+    <auth_user>infrati</auth_user>
+    <auth_password>Encrypted 2be98afc86aa7f2e4cb10a076cc93bbd3</auth_password>
+    <auth_mech/>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>N</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <allow_disk_use>N</allow_disk_use>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>PID</field_name>
+        <field_path>$.PID</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Pool QC</field_name>
+        <field_path>$.Pool QC</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>Pool Area</field_name>
+        <field_path>$.Pool Area</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+    </mongo_fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
