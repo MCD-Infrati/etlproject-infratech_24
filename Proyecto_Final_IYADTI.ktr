@@ -2487,6 +2487,212 @@ ORDER BY pid ASC;</sql>
     </GUI>
   </step>
   <step>
+    <name>Reemplazo_Valores_faltantes_bsmt</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <replaceAllByValue/>
+    <replaceAllMask/>
+    <selectFields>Y</selectFields>
+    <selectValuesType>N</selectValuesType>
+    <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      </valuetypes>
+    <fields>
+      <field>
+        <name>PID</name>
+        <value/>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>_id</name>
+        <value/>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Bsmt Unf SF</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Bsmt Cond</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Bsmt Half Bath</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>BsmtFin Type 1</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>BsmtFin Type 2</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Total Bsmt SF</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Bsmt Exposure</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Bsmt Full Bath</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Bsmt Qual</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>BsmtFin SF 2</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>BsmtFin SF 1</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>624</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Reemplazo_Valores_faltantes_garage</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <replaceAllByValue/>
+    <replaceAllMask/>
+    <selectFields>Y</selectFields>
+    <selectValuesType>N</selectValuesType>
+    <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      </valuetypes>
+    <fields>
+      <field>
+        <name>PID</name>
+        <value/>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>_id</name>
+        <value/>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Garage Cond</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Garage Type</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Order</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Garage Yr Blt</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Garage Cars</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Garage Qual</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Garage Finish</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Garage Area</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Selecciona/Renombra valores</name>
     <type>SelectValues</type>
     <description/>
@@ -2544,7 +2750,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\alfa7\OneDrive\Documentos\ICESI\MAESTRIA CIENCIA DE DATOS\1er semestre\Infraestructura y arquitectura de TI G1 - 241\Proyecto final\Test_resultados\test_Merge_Postgre</name>
+      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Merge_Postgre</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -3090,186 +3296,6 @@ ORDER BY pid ASC;</sql>
     </GUI>
   </step>
   <step>
-    <name>merge_Postgre</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>merge_ames_floor</step1>
-    <step2>Ordenar_pid_sales</step2>
-    <keys_1>
-      <key>pid</key>
-    </keys_1>
-    <keys_2>
-      <key>pid</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>688</xloc>
-      <yloc>448</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>merge_ames_floor</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>Ordenar_pid_ames</step1>
-    <step2>Ordenar_pid_floor</step2>
-    <keys_1>
-      <key>pid</key>
-    </keys_1>
-    <keys_2>
-      <key>pid</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>688</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Reemplazo_Valores_faltantes_bsmt</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <replaceAllByValue/>
-    <replaceAllMask/>
-    <selectFields>Y</selectFields>
-    <selectValuesType>N</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      <field>
-        <name>PID</name>
-        <value/>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>_id</name>
-        <value/>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Bsmt Unf SF</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Bsmt Cond</name>
-        <value>NA</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Bsmt Half Bath</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>BsmtFin Type 1</name>
-        <value>NA</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>BsmtFin Type 2</name>
-        <value>NA</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Total Bsmt SF</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Bsmt Exposure</name>
-        <value>NA</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Bsmt Full Bath</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Bsmt Qual</name>
-        <value>NA</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>BsmtFin SF 2</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>BsmtFin SF 1</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>624</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Validation_test_2</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
@@ -3293,7 +3319,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\alfa7\OneDrive\Documentos\ICESI\MAESTRIA CIENCIA DE DATOS\1er semestre\Infraestructura y arquitectura de TI G1 - 241\Proyecto final\Test_resultados\test_Missing_values_bsmt</name>
+      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Missing_values_bsmt</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -3491,100 +3517,6 @@ ORDER BY pid ASC;</sql>
     </GUI>
   </step>
   <step>
-    <name>Reemplazo_Valores_faltantes_garage</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <replaceAllByValue/>
-    <replaceAllMask/>
-    <selectFields>Y</selectFields>
-    <selectValuesType>N</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      <field>
-        <name>PID</name>
-        <value/>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>_id</name>
-        <value/>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Garage Cond</name>
-        <value>NA</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Garage Type</name>
-        <value>NA</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Order</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Garage Yr Blt</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Garage Cars</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Garage Qual</name>
-        <value>NA</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Garage Finish</name>
-        <value>NA</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>Garage Area</name>
-        <value>0</value>
-        <mask/>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>720</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Validation_test_3</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
@@ -3608,7 +3540,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\alfa7\OneDrive\Documentos\ICESI\MAESTRIA CIENCIA DE DATOS\1er semestre\Infraestructura y arquitectura de TI G1 - 241\Proyecto final\Test_resultados\test_Missing_values_garage</name>
+      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Missing_values_garage</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -3766,6 +3698,74 @@ ORDER BY pid ASC;</sql>
     <GUI>
       <xloc>1456</xloc>
       <yloc>720</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>merge_Postgre</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>merge_ames_floor</step1>
+    <step2>Ordenar_pid_sales</step2>
+    <keys_1>
+      <key>pid</key>
+    </keys_1>
+    <keys_2>
+      <key>pid</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>merge_ames_floor</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>Ordenar_pid_ames</step1>
+    <step2>Ordenar_pid_floor</step2>
+    <keys_1>
+      <key>pid</key>
+    </keys_1>
+    <keys_2>
+      <key>pid</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>688</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
