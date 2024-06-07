@@ -592,7 +592,7 @@
     </hop>
     <hop>
       <from>Selecciona/Renombra valores</from>
-      <to>Validation_test</to>
+      <to>Validation_test_merge_Postgre</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -602,7 +602,7 @@
     </hop>
     <hop>
       <from>Reemplazo_Valores_faltantes_bsmt</from>
-      <to>Validation_test_2</to>
+      <to>Validation_test_vf_bsmt</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -611,8 +611,28 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>MongoDB_test_misc</from>
+      <to>Reemplazo_Valores_faltantes_misc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MongoDB_test_pool</from>
+      <to>Reemplazo_Valores_faltantes_pool</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Reemplazo_Valores_faltantes_garage</from>
-      <to>Validation_test_3</to>
+      <to>Validation_test_vf_garage</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Reemplazo_Valores_faltantes_misc</from>
+      <to>Validation_test_vf_misc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Reemplazo_Valores_faltantes_pool</from>
+      <to>Validation_test_vf_pool</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1262,7 +1282,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>464</xloc>
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1304,7 +1324,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>464</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1346,7 +1366,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>464</xloc>
       <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2727,7 +2747,7 @@ ORDER BY pid ASC;</sql>
     </GUI>
   </step>
   <step>
-    <name>Validation_test</name>
+    <name>Validation_test_merge_Postgre</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
     <distribute>Y</distribute>
@@ -3296,7 +3316,7 @@ ORDER BY pid ASC;</sql>
     </GUI>
   </step>
   <step>
-    <name>Validation_test_2</name>
+    <name>Validation_test_vf_bsmt</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
     <distribute>Y</distribute>
@@ -3517,7 +3537,7 @@ ORDER BY pid ASC;</sql>
     </GUI>
   </step>
   <step>
-    <name>Validation_test_3</name>
+    <name>Validation_test_vf_garage</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
     <distribute>Y</distribute>
@@ -3730,7 +3750,7 @@ ORDER BY pid ASC;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
+      <xloc>656</xloc>
       <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3764,8 +3784,350 @@ ORDER BY pid ASC;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
+      <xloc>656</xloc>
       <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Reemplazo_Valores_faltantes_misc</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <replaceAllByValue/>
+    <replaceAllMask/>
+    <selectFields>Y</selectFields>
+    <selectValuesType>N</selectValuesType>
+    <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      </valuetypes>
+    <fields>
+      <field>
+        <name>PID</name>
+        <value/>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>_id</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Misc Feature</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Misc Val</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Reemplazo_Valores_faltantes_pool</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <replaceAllByValue/>
+    <replaceAllMask/>
+    <selectFields>Y</selectFields>
+    <selectValuesType>N</selectValuesType>
+    <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      </valuetypes>
+    <fields>
+      <field>
+        <name>PID</name>
+        <value/>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>_id</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Pool QC</name>
+        <value>NA</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>Pool Area</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>896</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Validation_test_vf_misc</name>
+    <type>TypeExitExcelWriterStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <makeSheetActive>Y</makeSheetActive>
+    <startingCell>A1</startingCell>
+    <appendOmitHeader>N</appendOmitHeader>
+    <appendOffset>0</appendOffset>
+    <appendEmpty>0</appendEmpty>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <appendLines>N</appendLines>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Missing_values_misc</name>
+      <extention>xlsx</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>test</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <stream_data>N</stream_data>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <protected_by/>
+      <splitevery>0</splitevery>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+    </file>
+    <template>
+      <enabled>N</enabled>
+      <sheet_enabled>N</sheet_enabled>
+      <filename>template.xls</filename>
+      <sheetname/>
+      <hidden>N</hidden>
+    </template>
+    <fields>
+      <field>
+        <name>PID</name>
+        <type>Integer</type>
+        <format/>
+        <title>PID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>_id</name>
+        <type>String</type>
+        <format/>
+        <title>_id</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Misc Feature</name>
+        <type>String</type>
+        <format/>
+        <title>Misc Feature</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Misc Val</name>
+        <type>Integer</type>
+        <format/>
+        <title>Misc Val</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Validation_test_vf_pool</name>
+    <type>TypeExitExcelWriterStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <makeSheetActive>Y</makeSheetActive>
+    <startingCell>A1</startingCell>
+    <appendOmitHeader>N</appendOmitHeader>
+    <appendOffset>0</appendOffset>
+    <appendEmpty>0</appendEmpty>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <appendLines>N</appendLines>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Missing_values_pool</name>
+      <extention>xlsx</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>test</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <stream_data>N</stream_data>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <protected_by/>
+      <splitevery>0</splitevery>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+    </file>
+    <template>
+      <enabled>N</enabled>
+      <sheet_enabled>N</sheet_enabled>
+      <filename>template.xls</filename>
+      <sheetname/>
+      <hidden>N</hidden>
+    </template>
+    <fields>
+      <field>
+        <name>PID</name>
+        <type>Integer</type>
+        <format/>
+        <title>PID</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>_id</name>
+        <type>String</type>
+        <format/>
+        <title>_id</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Pool QC</name>
+        <type>String</type>
+        <format/>
+        <title>Pool QC</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+      <field>
+        <name>Pool Area</name>
+        <type>Integer</type>
+        <format/>
+        <title>Pool Area</title>
+        <titleStyleCell/>
+        <styleCell/>
+        <commentField/>
+        <commentAuthorField/>
+        <formula>N</formula>
+        <hyperlinkField/>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1456</xloc>
+      <yloc>896</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
