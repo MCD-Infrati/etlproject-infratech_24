@@ -436,8 +436,8 @@
   <notepads>
     <notepad>
       <note>EXTRACCIÓN</note>
-      <xloc>96</xloc>
-      <yloc>48</yloc>
+      <xloc>112</xloc>
+      <yloc>64</yloc>
       <width>172</width>
       <heigth>48</heigth>
       <fontname>Segoe UI</fontname>
@@ -552,26 +552,26 @@
   <order>
     <hop>
       <from>Postgre_amesdbtemp</from>
-      <to>Ordenar_pid_ames</to>
+      <to>Sort_pid_ames</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Postgre_total_floordetail</from>
-      <to>Ordenar_pid_floor</to>
+      <to>Sort_pid_floor</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Postgre_salesProperty</from>
-      <to>Ordenar_pid_sales</to>
+      <to>Sort_pid_sales</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Ordenar_pid_ames</from>
+      <from>Sort_pid_ames</from>
       <to>merge_ames_floor</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Ordenar_pid_floor</from>
+      <from>Sort_pid_floor</from>
       <to>merge_ames_floor</to>
       <enabled>Y</enabled>
     </hop>
@@ -581,58 +581,88 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Ordenar_pid_sales</from>
+      <from>Sort_pid_sales</from>
       <to>merge_Postgre</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>merge_Postgre</from>
-      <to>Selecciona/Renombra valores</to>
+      <to>Select / Rename fields</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Selecciona/Renombra valores</from>
+      <from>Select / Rename fields</from>
       <to>Validation_test_merge_Postgre</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>MongoDB_test_bsmt</from>
-      <to>Reemplazo_Valores_faltantes_bsmt</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Reemplazo_Valores_faltantes_bsmt</from>
-      <to>Validation_test_vf_bsmt</to>
+      <to>Replace_missing_values_bsmt</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>MongoDB_test_garage</from>
-      <to>Reemplazo_Valores_faltantes_garage</to>
+      <to>Replace_missing_values_garage</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>MongoDB_test_misc</from>
-      <to>Reemplazo_Valores_faltantes_misc</to>
+      <to>Replace_missing_values_misc</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>MongoDB_test_pool</from>
-      <to>Reemplazo_Valores_faltantes_pool</to>
+      <to>Replace_missing_values_pool</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Reemplazo_Valores_faltantes_garage</from>
-      <to>Validation_test_vf_garage</to>
+      <from>Replace_missing_values_garage</from>
+      <to>Validation_test_mv_garage</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Reemplazo_Valores_faltantes_misc</from>
-      <to>Validation_test_vf_misc</to>
+      <from>Replace_missing_values_misc</from>
+      <to>Validation_test_mv_misc</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Reemplazo_Valores_faltantes_pool</from>
-      <to>Validation_test_vf_pool</to>
+      <from>Replace_missing_values_pool</from>
+      <to>Validation_test_mv_pool</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace_missing_values_bsmt</from>
+      <to>Validation_test_mv_bsmt</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace_missing_values_bsmt</from>
+      <to>Sort_PID_bsmt</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace_missing_values_garage</from>
+      <to>Sort_PID_garage</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace_missing_values_misc</from>
+      <to>Sort_PID_misc</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace_missing_values_pool</from>
+      <to>Sort_PID_pool</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort_PID_bsmt</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort_PID_garage</from>
+      <to>Merge join</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -998,7 +1028,7 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>624</yloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1099,7 +1129,7 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>720</yloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1170,7 +1200,7 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>800</yloc>
+      <yloc>784</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1241,12 +1271,12 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>896</yloc>
+      <yloc>880</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Ordenar_pid_ames</name>
+    <name>Sort_pid_ames</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1288,7 +1318,7 @@
     </GUI>
   </step>
   <step>
-    <name>Ordenar_pid_floor</name>
+    <name>Sort_pid_floor</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1330,7 +1360,7 @@
     </GUI>
   </step>
   <step>
-    <name>Ordenar_pid_sales</name>
+    <name>Sort_pid_sales</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -2507,10 +2537,10 @@ ORDER BY pid ASC;</sql>
     </GUI>
   </step>
   <step>
-    <name>Reemplazo_Valores_faltantes_bsmt</name>
+    <name>Replace_missing_values_bsmt</name>
     <type>IfNull</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -2614,15 +2644,15 @@ ORDER BY pid ASC;</sql>
     </remotesteps>
     <GUI>
       <xloc>464</xloc>
-      <yloc>624</yloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Reemplazo_Valores_faltantes_garage</name>
+    <name>Replace_missing_values_garage</name>
     <type>IfNull</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -2708,12 +2738,12 @@ ORDER BY pid ASC;</sql>
     </remotesteps>
     <GUI>
       <xloc>464</xloc>
-      <yloc>720</yloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Selecciona/Renombra valores</name>
+    <name>Select / Rename fields</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -3310,13 +3340,13 @@ ORDER BY pid ASC;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1456</xloc>
-      <yloc>448</yloc>
+      <xloc>1520</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Validation_test_vf_bsmt</name>
+    <name>Validation_test_mv_bsmt</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
     <distribute>Y</distribute>
@@ -3531,13 +3561,13 @@ ORDER BY pid ASC;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1456</xloc>
-      <yloc>624</yloc>
+      <xloc>752</xloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Validation_test_vf_garage</name>
+    <name>Validation_test_mv_garage</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
     <distribute>Y</distribute>
@@ -3716,8 +3746,8 @@ ORDER BY pid ASC;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1456</xloc>
-      <yloc>720</yloc>
+      <xloc>752</xloc>
+      <yloc>704</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3734,7 +3764,7 @@ ORDER BY pid ASC;</sql>
     </partitioning>
     <join_type>INNER</join_type>
     <step1>merge_ames_floor</step1>
-    <step2>Ordenar_pid_sales</step2>
+    <step2>Sort_pid_sales</step2>
     <keys_1>
       <key>pid</key>
     </keys_1>
@@ -3767,8 +3797,8 @@ ORDER BY pid ASC;</sql>
       <schema_name/>
     </partitioning>
     <join_type>INNER</join_type>
-    <step1>Ordenar_pid_ames</step1>
-    <step2>Ordenar_pid_floor</step2>
+    <step1>Sort_pid_ames</step1>
+    <step2>Sort_pid_floor</step2>
     <keys_1>
       <key>pid</key>
     </keys_1>
@@ -3790,10 +3820,10 @@ ORDER BY pid ASC;</sql>
     </GUI>
   </step>
   <step>
-    <name>Reemplazo_Valores_faltantes_misc</name>
+    <name>Replace_missing_values_misc</name>
     <type>IfNull</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -3843,15 +3873,15 @@ ORDER BY pid ASC;</sql>
     </remotesteps>
     <GUI>
       <xloc>464</xloc>
-      <yloc>800</yloc>
+      <yloc>784</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Reemplazo_Valores_faltantes_pool</name>
+    <name>Replace_missing_values_pool</name>
     <type>IfNull</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -3901,12 +3931,12 @@ ORDER BY pid ASC;</sql>
     </remotesteps>
     <GUI>
       <xloc>464</xloc>
-      <yloc>896</yloc>
+      <yloc>880</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Validation_test_vf_misc</name>
+    <name>Validation_test_mv_misc</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
     <distribute>Y</distribute>
@@ -4013,13 +4043,13 @@ ORDER BY pid ASC;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1456</xloc>
-      <yloc>800</yloc>
+      <xloc>752</xloc>
+      <yloc>784</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Validation_test_vf_pool</name>
+    <name>Validation_test_mv_pool</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
     <distribute>Y</distribute>
@@ -4126,8 +4156,208 @@ ORDER BY pid ASC;</sql>
       </output>
     </remotesteps>
     <GUI>
+      <xloc>752</xloc>
+      <yloc>880</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort_PID_bsmt</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>PID</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1184</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort_PID_garage</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>PID</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1184</xloc>
+      <yloc>704</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort_PID_misc</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>PID</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1184</xloc>
+      <yloc>784</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort_PID_pool</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>PID</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1184</xloc>
+      <yloc>880</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Merge join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>Sort_PID_bsmt</step1>
+    <step2>Sort_PID_garage</step2>
+    <keys_1>
+    </keys_1>
+    <keys_2>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>1456</xloc>
-      <yloc>896</yloc>
+      <yloc>656</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
