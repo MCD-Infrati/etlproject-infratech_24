@@ -518,27 +518,6 @@
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
-    <notepad>
-      <note>Probar con left outler</note>
-      <xloc>1248</xloc>
-      <yloc>624</yloc>
-      <width>179</width>
-      <heigth>34</heigth>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
   <connection>
     <name>Elephant_Proy_Final</name>
@@ -1053,7 +1032,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>FULL OUTER</join_type>
+    <join_type>LEFT OUTER</join_type>
     <step1>Sort_PID_bsmt</step1>
     <step2>Sort_PID_garage</step2>
     <keys_1>
@@ -1087,7 +1066,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>FULL OUTER</join_type>
+    <join_type>LEFT OUTER</join_type>
     <step1>Sort_PID_misc</step1>
     <step2>Sort_PID_pool</step2>
     <keys_1>
