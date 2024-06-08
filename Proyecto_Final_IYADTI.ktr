@@ -736,6 +736,21 @@
       <to>Validation_test_merge_MongoDB 2</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>CSV file input</from>
+      <to>Calculator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>Sort_pid_csv</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort_pid_csv</from>
+      <to>Rename &amp; drop year</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>CSV file input</name>
@@ -1102,7 +1117,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -1218,7 +1233,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -1319,7 +1334,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -1390,7 +1405,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -3294,7 +3309,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Merge_MOngoDB</name>
+      <name>C:/Users/Esteban Ordoñez/OneDrive - Universidad Icesi/01_Maestria_Ciencia_Datos/01_Semestre/04_Infraestructura_Arquitectura_TI/Proyecto_Final_GitHub/etlproject-infratech_24/Test_resultados/test_Merge_MOngoDB</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -3731,7 +3746,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Merge_MOngoDB2</name>
+      <name>C:/Users/Esteban Ordoñez/OneDrive - Universidad Icesi/01_Maestria_Ciencia_Datos/01_Semestre/04_Infraestructura_Arquitectura_TI/Proyecto_Final_GitHub/etlproject-infratech_24/Test_resultados/test_Merge_MOngoDB2</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -4168,7 +4183,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Merge_Postgre</name>
+      <name>C:/Users/Esteban Ordoñez/OneDrive - Universidad Icesi/01_Maestria_Ciencia_Datos/01_Semestre/04_Infraestructura_Arquitectura_TI/Proyecto_Final_GitHub/etlproject-infratech_24/Test_resultados/test_Merge_Postgre</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -4737,7 +4752,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Missing_values_bsmt</name>
+      <name>C:/Users/Esteban Ordoñez/OneDrive - Universidad Icesi/01_Maestria_Ciencia_Datos/01_Semestre/04_Infraestructura_Arquitectura_TI/Proyecto_Final_GitHub/etlproject-infratech_24/Test_resultados/test_Missing_values_bsmt</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -4958,7 +4973,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Missing_values_garage</name>
+      <name>C:/Users/Esteban Ordoñez/OneDrive - Universidad Icesi/01_Maestria_Ciencia_Datos/01_Semestre/04_Infraestructura_Arquitectura_TI/Proyecto_Final_GitHub/etlproject-infratech_24/Test_resultados/test_Missing_values_garage</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -5143,7 +5158,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Missing_values_misc</name>
+      <name>C:/Users/Esteban Ordoñez/OneDrive - Universidad Icesi/01_Maestria_Ciencia_Datos/01_Semestre/04_Infraestructura_Arquitectura_TI/Proyecto_Final_GitHub/etlproject-infratech_24/Test_resultados/test_Missing_values_misc</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -5256,7 +5271,7 @@ ORDER BY pid ASC;</sql>
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:/Users/alfa7/OneDrive/Documentos/ICESI/MAESTRIA CIENCIA DE DATOS/1er semestre/Infraestructura y arquitectura de TI G1 - 241/Proyecto final/Proyecto en VSC/etlproject-infratech_24/Test_resultados/test_Missing_values_pool</name>
+      <name>C:/Users/Esteban Ordoñez/OneDrive - Universidad Icesi/01_Maestria_Ciencia_Datos/01_Semestre/04_Infraestructura_Arquitectura_TI/Proyecto_Final_GitHub/etlproject-infratech_24/Test_resultados/test_Missing_values_pool</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -5410,6 +5425,120 @@ ORDER BY pid ASC;</sql>
     <GUI>
       <xloc>656</xloc>
       <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>Year Remod/Add Updated</field_name>
+      <calc_type>NVL</calc_type>
+      <field_a>Year Remod/Add</field_a>
+      <field_b>Year Built</field_b>
+      <field_c/>
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Rename &amp; drop year</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <select_unspecified>N</select_unspecified>
+      <remove>
+        <name>Year Remod/Add</name>
+      </remove>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort_pid_csv</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>PID</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
