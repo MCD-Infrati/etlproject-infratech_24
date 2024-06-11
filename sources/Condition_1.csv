@@ -1,0 +1,10 @@
+code;description
+Artery;Adjacent to arterial street
+Feedr;Adjacent to feeder street
+Norm;Normal
+RRNn;Within 200' of North-South Railroad
+RRAn;Adjacent to North-South Railroad
+PosN;Near positive off-site feature--park, greenbelt, etc.
+PosA;Adjacent to postive off-site feature
+RRNe;Within 200' of East-West Railroad
+RRAe;Adjacent to East-West Railroad
