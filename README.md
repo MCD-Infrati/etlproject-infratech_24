@@ -92,13 +92,20 @@ En la base de Excel tambien se copió la base de muestra final para ir realizand
 
 #### 1.2. Base NOSQL:
 
-PENDIENTE FABIAN
+Se enlaza MongoDB con la <a href="https://docs.google.com/document/d/14NbPDg40BGuY0Y8KIH3CPpGZMAFUVUVd/edit">conexión proveida por la docente</a>, dando como resultado 4 colecciones: bsmt, garage, misc y pool:
+
+![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/dae3eb1d-7ea5-4dd8-bb69-82382f906d62)
+
+Se analizan los esquemas de cada una, para conocer el contenido de los documentos:
+
+![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/3eecab6f-9791-405f-823f-1adc6d6559c1)
 
 
 #### 1.3. Base CSV:
 
 Con el uso de excel se procede a explorar el archivo <strong>AmesProperty.csv</strong>
 ![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/b19f1260-ee00-49c9-b939-ef5ad5809355)
+
 
 ### 2. Inventario de campos
 Teniendo claro la infomración de cada fuente, se realiza el inventario final con respecto a la base resultado, como se muestra a continuación:
@@ -150,7 +157,15 @@ Contiene la fecha de remodelación, si no tiene, en vez de dejarlo en Null coloc
 <strong>Garage, pool, bsmt, misc</strong>
 Al realizar el cargue de estos datos (garage, pool, bsmt, misc), si no se encuentran los datos, debe especificarse NA si es cualitativa y 0 si es numérica.
 
+Para relizar esta tranfomración se toma como insumo la categorizacion de variables que ofrece el input de entrada de Mongo y mediante un nodo de tipo "If null" se da la intruccion de esta transformación:
+
+![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/26f54cce-6dc4-44ea-b1e8-23bd5b82680b)
+
+Esto se implementa para cada base.
+
 ![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/f6205008-3f0c-40bb-b8b0-dce263d8182d)
+
+Como nota importante, no se reemplaza o se tranforma los nulos en la columna PID dado que es la llave para los merge con las demás fuentes e incluso en pasos anteriores se verifica la inexistencia de nulos.
 
 
 <strong>Merge</strong>
@@ -167,25 +182,32 @@ Estos test de validación se guardan en la carpeta <a href="https://github.com/M
 
 ![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/7cfce299-f5a4-43ee-a0a8-bd1acb884d32)
 
+Las uniones de las 3 fuentes de los datos se concluye en el test numero 12, apartir de este punto se relizan las transformaciones propias de la sección opcional para <strong>neighborhood, Lot Shape y finalmente Conditional</strong>, esta ultima aplicada a dos columnas del datasaet "Condition1" y "Condition2"
+
+![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/b889b56f-d7ab-4d54-97f1-702c5b7d6388)
+
+Las transformaciones de Condition1 y Condition2, a diferencia de Neighborhood y Lot Shape, presentaban la particularidad de que algunos registros ya venían con una estructura de código, mientras que otros contenían descripciones. Debido a la longitud de las cadenas de texto, no fue suficiente utilizar un simple sort para realizar los merges. Por lo tanto, se tuvo que aplicar reglas condicionales adicionales y realizar reemplazos de strings, ya que algunos merges no eran efectivos.
+
+![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/090fb1e6-eb88-4c31-81be-fa81bf6c5fb9)
 
 
-## Getting Started
-Instructions for contributors
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
-
-    *If using offline data mention that and how contributors may obtain the data )*
-    
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
-
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
-
-5. Follow setup [instructions](Link to file)
-
-## Featured Notebooks/Analysis/Deliverables
-* [Notebook/Markdown/Slide Deck Title](link)
-* [Notebook/Markdown/Slide DeckTitle](link)
-* [Blog Post](link)
+<br></br>
+### 5. Archivo final
+Después de concluir todo el proceso, obtuvimos la base de datos con los parámetros exigidos por la docente, incluyendo el orden correcto de las columnas y las transformaciones pertinentes. El archivo resultante se puede observar en https://github.com/MCD-Infrati/etlproject-infratech_24/blob/main/Base_Resultado_Final.xlsx
 
 
+
+
+## Lecciones Aprendidas
+<ol>
+<li><strong>Comprensión de los Datos</strong>: Es crucial realizar un entendimiento profundo de la data antes de su tratamiento y transformación. Esto permite comprender la realidad del problema o necesidad y diseñar un proceso ETL más eficiente y preciso.</li>
+<li><strong>Ventajas de las Bases Relacionales</strong>: De todas las fuentes de datos, la base de datos relacional permitió una carga más eficiente, ya que al incrustar la consulta en Pentaho, se podían realizar transformaciones preliminares directamente en la base de datos. Esto redujo la carga de trabajo en el plano del aplicativo.</li>
+<li><strong>Importancia de la Validación</strong>: Es fundamental tener nodos de validación con salidas de archivos para realizar pruebas de cada merge. aunque existen nodos que permiten merges entre varias fuentes a la vez, para este caso de decidió ir uno por uno con si debido test lo cual ayudo mucho a hacer el control de calidad de la transformación</li>
+<li><strong>Limitaciones del procesamiento de Pentaho para validaciones con salida excel</strong>: Los tests que generaban archivos CSV tenían que desactivarse porque Pentaho no generaba la cantidad completa de registros esperados, solo la mitad. Esto podría deberse a la capacidad limitada de procesamiento de Pentaho. Se dejó esta cuestión abierta para ser clarificada por la docente.</li>
+<li><strong>Desafíos con Merges de Cadenas Largas</strong>: Al realizar merges con cadenas de texto largas, como en los casos de Condition1 y Condition2, el merge no fue tan efectivo. Esto llevó a la necesidad de utilizar métodos condicionales y reemplazos de strings. Esta experiencia resalta la importancia de usar valores numéricos o cadenas de texto cortas como claves primarias, siendo preferibles los valores numéricos.</li>
+<li><strong>Trabajo en Equipo</strong>: El trabajo en equipo es crucial en este tipo de proyectos, ya que los conocimientos multidisciplinarios ayudan a encontrar soluciones y a generar un orden adecuado para el proceso ETL. La colaboración efectiva permitió abordar los desafíos de manera más eficiente y creativa.</li>
+<li><strong>Automatización del Proceso ETL</strong>: La automatización del proceso ETL a través de herramientas como Pentaho es esencial para manejar grandes volúmenes de datos de manera eficiente. Permite reducir errores humanos y garantizar la consistencia y precisión de los datos transformados.</li>
+<li><strong>Documentación del Proceso</strong>: Mantener una documentación detallada de cada paso del proceso ETL es fundamental. Esto facilita la identificación de problemas, la reproducción de los procesos y el mantenimiento del sistema a largo plazo.</li>
+    </ol>
+
+Este ejercicio resultó interesante ya que permitió reforzar los conocimientos adquiridos en el módulo de Arquitectura e Infraestructura de TI. A través de la práctica, se pudo trabajar con diversos tipos de datos, desde la simplicidad de un archivo plano en CSV hasta la complejidad de bases de datos relacionales SQL y NoSQL. Esta experiencia práctica no solo consolidó nuestros conocimientos teóricos, sino que también nos permitió enfrentar y resolver retos reales en la transformación de datos, mejorando así nuestras habilidades en el manejo de diferentes estructuras y sistemas de bases de datos.
