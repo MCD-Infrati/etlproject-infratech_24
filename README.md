@@ -108,11 +108,11 @@ Con el uso de excel se procede a explorar el archivo <strong>AmesProperty.csv</s
 
 
 ### 2. Inventario de campos
-Teniendo claro la infomración de cada fuente, se realiza el inventario final con respecto a la base resultado, como se muestra a continuación:
+Teniendo claro la información de cada fuente, se realiza el inventario final con respecto a la base resultado, como se muestra a continuación:
 
 <img src="https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/46bff8b6-3f67-4368-8177-be654ec8b1aa" alt="image" width="400px">
 
-Los campos en amarillo son aquellos a los que se debia relziar un calculo específico con el uso de consultas SQL en elephant para llevar dichos campos a la necesidad del ejercicio.
+Los campos en amarillo son aquellos a los que se debia realizar un cálculo específico con el uso de consultas SQL en elephant para llevar dichos campos a la necesidad del ejercicio.
 
 ### 3. Carga de las bases en Pentaho Spoon
 
@@ -121,7 +121,7 @@ Se procede a cargar cada una de las bases en Pentaho:
 <img src="https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/1aed317f-cd2b-4e7c-8dd7-fc26e5d84171" alt="image" width="400px">
 
 
-La bases traidas desde Elephant, se cargan incluidas las consultas nesesarias y dando el orden y nombres identificados en el inventario de campos:
+La bases traídas desde Elephant, se cargan incluidas las consultas nesesarias y dando el orden y nombres identificados en el inventario de campos:
 <br></br>
 <strong>amesdbtemp en join con TypeQuality, MSZoning y MSSubClass y tranformación Gr Liv Area</strong>
 <img src="https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/09760cc8-61c3-4930-9e78-9c1a5409a550" alt="image" width="500px">
@@ -157,7 +157,7 @@ Contiene la fecha de remodelación, si no tiene, en vez de dejarlo en Null coloc
 <strong>Garage, pool, bsmt, misc</strong>
 Al realizar el cargue de estos datos (garage, pool, bsmt, misc), si no se encuentran los datos, debe especificarse NA si es cualitativa y 0 si es numérica.
 
-Para relizar esta tranfomración se toma como insumo la categorizacion de variables que ofrece el input de entrada de Mongo y mediante un nodo de tipo "If null" se da la intruccion de esta transformación:
+Para realizar esta transformación se toma como insumo la categorizacion de variables que ofrece el input de entrada de Mongo y mediante un nodo de tipo "If null" se da la instrucción de esta transformación:
 
 ![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/26f54cce-6dc4-44ea-b1e8-23bd5b82680b)
 
@@ -174,7 +174,7 @@ El proceso ETL en Pentaho comienza con la base de datos Postgre_amesdbtemp, que 
 
 Finalizada y ordenada la unión con la base CSV, se comienza a unir con cada base de datos de MongoDB, transformada y ordenada: primero con la base bsmt, luego con la base garage, a continuación con la base misc y finalmente con la base pool. Cada unión se efectúa utilizando left outer join, garantizando que siempre se preserve la base madre.
 
-Cada paso que se realiza, contiene una validación mediante una salida de excel dodne se revisaba cada resultado y asi tener control de cada paso relizado en la transformación.
+Cada paso que se realiza, contiene una validación mediante una salida de excel dodne se revisaba cada resultado y así tener control de cada paso realizado en la transformación.
 
 ![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/34daa725-8f1a-418b-beb6-0a643dfedf62)
 
@@ -182,7 +182,7 @@ Estos test de validación se guardan en la carpeta <a href="https://github.com/M
 
 ![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/7cfce299-f5a4-43ee-a0a8-bd1acb884d32)
 
-Las uniones de las 3 fuentes de los datos se concluye en el test numero 12, apartir de este punto se relizan las transformaciones propias de la sección opcional para <strong>neighborhood, Lot Shape y finalmente Conditional</strong>, esta ultima aplicada a dos columnas del datasaet "Condition1" y "Condition2"
+Las uniones de las 3 fuentes de los datos se concluye en el test número 12, a partir de este punto se relizan las transformaciones propias de la sección opcional para <strong>neighborhood, Lot Shape y finalmente Conditional</strong>, esta última aplicada a dos columnas del datasaet "Condition1" y "Condition2"
 
 ![image](https://github.com/MCD-Infrati/etlproject-infratech_24/assets/70969596/b889b56f-d7ab-4d54-97f1-702c5b7d6388)
 
@@ -202,12 +202,13 @@ Después de concluir todo el proceso, obtuvimos la base de datos con los paráme
 <ol>
 <li><strong>Comprensión de los Datos</strong>: Es crucial realizar un entendimiento profundo de la data antes de su tratamiento y transformación. Esto permite comprender la realidad del problema o necesidad y diseñar un proceso ETL más eficiente y preciso.</li>
 <li><strong>Ventajas de las Bases Relacionales</strong>: De todas las fuentes de datos, la base de datos relacional permitió una carga más eficiente, ya que al incrustar la consulta en Pentaho, se podían realizar transformaciones preliminares directamente en la base de datos. Esto redujo la carga de trabajo en el plano del aplicativo.</li>
-<li><strong>Importancia de la Validación</strong>: Es fundamental tener nodos de validación con salidas de archivos para realizar pruebas de cada merge. aunque existen nodos que permiten merges entre varias fuentes a la vez, para este caso de decidió ir uno por uno con si debido test lo cual ayudo mucho a hacer el control de calidad de la transformación</li>
+<li><strong>Importancia de la Validación</strong>: Es fundamental tener nodos de validación con salidas de archivos para realizar pruebas de cada merge. Aunque existen nodos que permiten merges entre varias fuentes a la vez, para este caso de decidió ir uno por uno con su debido test lo cual ayudó mucho a hacer el control de calidad de la transformación</li>
 <li><strong>Limitaciones del procesamiento de Pentaho para validaciones con salida excel</strong>: Los tests que generaban archivos CSV tenían que desactivarse porque Pentaho no generaba la cantidad completa de registros esperados, solo la mitad. Esto podría deberse a la capacidad limitada de procesamiento de Pentaho. Se dejó esta cuestión abierta para ser clarificada por la docente.</li>
 <li><strong>Desafíos con Merges de Cadenas Largas</strong>: Al realizar merges con cadenas de texto largas, como en los casos de Condition1 y Condition2, el merge no fue tan efectivo. Esto llevó a la necesidad de utilizar métodos condicionales y reemplazos de strings. Esta experiencia resalta la importancia de usar valores numéricos o cadenas de texto cortas como claves primarias, siendo preferibles los valores numéricos.</li>
 <li><strong>Trabajo en Equipo</strong>: El trabajo en equipo es crucial en este tipo de proyectos, ya que los conocimientos multidisciplinarios ayudan a encontrar soluciones y a generar un orden adecuado para el proceso ETL. La colaboración efectiva permitió abordar los desafíos de manera más eficiente y creativa.</li>
 <li><strong>Automatización del Proceso ETL</strong>: La automatización del proceso ETL a través de herramientas como Pentaho es esencial para manejar grandes volúmenes de datos de manera eficiente. Permite reducir errores humanos y garantizar la consistencia y precisión de los datos transformados.</li>
 <li><strong>Documentación del Proceso</strong>: Mantener una documentación detallada de cada paso del proceso ETL es fundamental. Esto facilita la identificación de problemas, la reproducción de los procesos y el mantenimiento del sistema a largo plazo.</li>
+<li><strong>Uso de herramientas en paralelo</strong>: A través de python en Visual Studio Code se pudo realizar una revisión rápida y eficiente de cada conjunto de datos obtenido en los diferentes pasos a modo de validación, resultando una valiosa aliada la extención <strong>Data Wrangler</strong>, la cual nos permitía examinar de manera completa cualquier conjunto obtenido en la pruebas sin necesidad dei implentar tanto código solo faltaba leer el conjunto de datos y cargarlo coomo un dataframe. Así la herramienta con solo visualizar el dataframe ya nos arrojaba análisis estadístico y distribuciones de los datos.</li>
     </ol>
 
 Este ejercicio resultó interesante ya que permitió reforzar los conocimientos adquiridos en el módulo de Arquitectura e Infraestructura de TI. A través de la práctica, se pudo trabajar con diversos tipos de datos, desde la simplicidad de un archivo plano en CSV hasta la complejidad de bases de datos relacionales SQL y NoSQL. Esta experiencia práctica no solo consolidó nuestros conocimientos teóricos, sino que también nos permitió enfrentar y resolver retos reales en la transformación de datos, mejorando así nuestras habilidades en el manejo de diferentes estructuras y sistemas de bases de datos.
