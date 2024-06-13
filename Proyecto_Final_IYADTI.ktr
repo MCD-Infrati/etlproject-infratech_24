@@ -11531,7 +11531,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\alfa7\OneDrive\Documentos\ICESI\MAESTRIA CIENCIA DE DATOS\1er semestre\Infraestructura y arquitectura de TI G1 - 241\Proyecto final\Proyecto en VSC\etlproject-infratech_24\sources\AmesProperty.csv</filename>
+    <filename>C:\Users\Esteban Ordoñez\OneDrive - Universidad Icesi\01_Maestria_Ciencia_Datos\01_Semestre\04_Infraestructura_Arquitectura_TI\Proyecto_Final_GitHub\etlproject-infratech_24\sources\AmesProperty.csv</filename>
     <filename_field>C:\test.csv</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -11766,47 +11766,6 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Creation_New_Field_values_Year_Remod/Add_Updated</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <failIfNoFile>Y</failIfNoFile>
-    <calculation>
-      <field_name>Year Remod/Add Updated</field_name>
-      <calc_type>NVL</calc_type>
-      <field_a>Year Remod/Add</field_a>
-      <field_b>Year Built</field_b>
-      <field_c/>
-      <value_type>Integer</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>384</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -12068,7 +12027,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\alfa7\OneDrive\Documentos\ICESI\MAESTRIA CIENCIA DE DATOS\1er semestre\Infraestructura y arquitectura de TI G1 - 241\Proyecto final\Proyecto en VSC\etlproject-infratech_24\sources\Condition_1.csv</filename>
+    <filename>C:\Users\Esteban Ordoñez\OneDrive - Universidad Icesi\01_Maestria_Ciencia_Datos\01_Semestre\04_Infraestructura_Arquitectura_TI\Proyecto_Final_GitHub\etlproject-infratech_24\sources\Condition_1.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -12121,6 +12080,47 @@
     </GUI>
   </step>
   <step>
+    <name>Creation_New_Field_values_Year_Remod/Add_Updated</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>Year Remod/Add Updated</field_name>
+      <calc_type>NVL</calc_type>
+      <field_a>Year Remod/Add</field_a>
+      <field_b>Year Built</field_b>
+      <field_c/>
+      <value_type>Integer</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Entregable_Final</name>
     <type>TypeExitExcelWriterStep</type>
     <description/>
@@ -12144,7 +12144,7 @@
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\alfa7\OneDrive\Documentos\ICESI\MAESTRIA CIENCIA DE DATOS\1er semestre\Infraestructura y arquitectura de TI G1 - 241\Proyecto final\Proyecto en VSC\etlproject-infratech_24\Base_Resultado_Final_V2</name>
+      <name>C:/Users/Esteban Ordoñez/OneDrive - Universidad Icesi/01_Maestria_Ciencia_Datos/01_Semestre/04_Infraestructura_Arquitectura_TI/Proyecto_Final_GitHub/etlproject-infratech_24/Base_Resultado_Final</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -13168,7 +13168,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\alfa7\OneDrive\Documentos\ICESI\MAESTRIA CIENCIA DE DATOS\1er semestre\Infraestructura y arquitectura de TI G1 - 241\Proyecto final\Proyecto en VSC\etlproject-infratech_24\sources\LotShape.csv</filename>
+    <filename>C:\Users\Esteban Ordoñez\OneDrive - Universidad Icesi\01_Maestria_Ciencia_Datos\01_Semestre\04_Infraestructura_Arquitectura_TI\Proyecto_Final_GitHub\etlproject-infratech_24\sources\LotShape.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -13233,7 +13233,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -13349,7 +13349,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -13450,7 +13450,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -13521,7 +13521,7 @@
     </partitioning>
     <use_connection_string>Y</use_connection_string>
     <use_legacy_options>N</use_legacy_options>
-    <connection_string>Encrypted 6d6f6e676f64622b7372763a2f2f696e66726174693a696e667261746940636c7573746572302e763572696835622e6d6f6cd9f7cbaa44c99790e410a076cc93bbd3</connection_string>
+    <connection_string>mongodb+srv://infrati:infrati@cluster0.v5rih5b.mongodb.net/infrati</connection_string>
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
@@ -13590,7 +13590,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\alfa7\OneDrive\Documentos\ICESI\MAESTRIA CIENCIA DE DATOS\1er semestre\Infraestructura y arquitectura de TI G1 - 241\Proyecto final\Proyecto en VSC\etlproject-infratech_24\sources\Neighborhood.csv</filename>
+    <filename>C:\Users\Esteban Ordoñez\OneDrive - Universidad Icesi\01_Maestria_Ciencia_Datos\01_Semestre\04_Infraestructura_Arquitectura_TI\Proyecto_Final_GitHub\etlproject-infratech_24\sources\Neighborhood.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
