@@ -436,7 +436,7 @@
   <notepads>
     <notepad>
       <note>DB_Resultado  </note>
-      <xloc>4208</xloc>
+      <xloc>4048</xloc>
       <yloc>816</yloc>
       <width>339</width>
       <heigth>77</heigth>
@@ -17573,7 +17573,7 @@ ORDER BY pid ASC;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>4048</xloc>
+      <xloc>4144</xloc>
       <yloc>944</yloc>
       <draw>Y</draw>
     </GUI>
